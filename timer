@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+namespace think;
+
+// 命令行入口文件
+// 加载基础文件
+require __DIR__ . '/vendor/autoload.php';
+
+// 应用初始化
+(new App())->console->run();
+
+
+use schedule\Timer;
+
+//控制台逻辑
+switch ($argv[1]){
+    default : return false; break;
+    case "queue":
+        //easyTask 队列任务
+        $queueTimer =new Timer($argv);
+        $queueTimer->execute();
+        break;
+}

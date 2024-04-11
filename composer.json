@@ -1,0 +1,76 @@
+{
+    "name": "topthink/think",
+    "description": "the new thinkphp framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "thinkphp",
+        "ORM"
+    ],
+    "homepage": "http://thinkphp.cn/",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "liu21st",
+            "email": "liu21st@gmail.com"
+        },
+        {
+            "name": "yunwuxin",
+            "email": "448901948@qq.com"
+        }        
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "topthink/framework": "^6.0.0",
+        "topthink/think-orm": "^2.0",
+        "topthink/think-queue": "^3.0",
+        "topthink/think-migration": "^3.0",
+        "firebase/php-jwt": "^5.2",
+        "paragonie/random_compat": "^9.99",
+        "guzzlehttp/guzzle": "~6.0",
+        "easy-task/easy-task": "^2.4",
+        "symfony/var-dumper": "^4.2",
+        "phpoffice/phpspreadsheet": "^1.12",
+        "elasticsearch/elasticsearch": "^7.10",
+        "phpunit/phpunit": "^8.5",
+        "mtdowling/cron-expression": "^1.2"
+    },
+    "require-dev": {
+        "topthink/think-trace":"^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app",
+            "schedule\\": "schedule",
+            "extend\\": "extend",
+            "tests\\": "tests"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "app\\": "app",
+            "domain\\": "domain",
+            "schedule\\": "schedule",
+            "extend\\": "extend",
+            "tests\\": "tests"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "platform": {
+            "php": "7.2.3"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    }
+}

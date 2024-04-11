@@ -1,0 +1,1961 @@
+{
+	"info": {
+		"_postman_id": "d6fba888-c58d-4529-877e-a71fbd26f669",
+		"name": "TP6_EASY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Demo",
+			"item": [
+				{
+					"name": "-新增",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"realtime\",\n    \"nick_name\": \"soma\",\n    \"mobile\": \"18588891945\",\n    \"photo\": \"http://host.test/img.jpg\",\n    \"sex\": 0,\n    \"type\": 1,\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/demo/sample/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-新增-异步",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\":\"queue\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/demo/sample/job",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-新增-批量",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"realtime\"\n    },\n    {\n        \"name\": \"realtime\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/demo/sample/batch",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-关联查询",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_include=user&_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_include",
+									"value": "user"
+								},
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-翻页",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_pagination=false&_page=1&_perpage=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_pagination",
+									"value": "false"
+								},
+								{
+									"key": "_page",
+									"value": "1"
+								},
+								{
+									"key": "_perpage",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-排序",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_sort=-id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_sort",
+									"value": "-id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-表达式查询 =",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_where=id/12,name/123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_where",
+									"value": "id/12,name/123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-表达式查询 >=",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_where=id>/10&time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_where",
+									"value": "id>/10"
+								},
+								{
+									"key": "time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-表达式查询 like",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_where=name/123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_where",
+									"value": "name/123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-列表-实时",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/list?_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"list"
+							],
+							"query": [
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-详情-实时",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/12?_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"12"
+							],
+							"query": [
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-获取-详情-关联查询",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/12?_include=user&_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"12"
+							],
+							"query": [
+								{
+									"key": "_include",
+									"value": "user"
+								},
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-更新-详情",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"name\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/demo/sample/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-批量更新",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\":356,\"name\": \"124\"\n    },\n    {\n        \"id\":355,\"name\": \"156\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/demo/sample/batch",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "-删除-详情",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/demo/sample/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"demo",
+								"sample",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Oauth",
+			"item": [],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "用户-新增-注册-开放",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nick_name",
+									"value": "nick_name",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18588891945",
+									"type": "text"
+								},
+								{
+									"key": "pass_word",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "client_driver",
+									"value": "fire_fox",
+									"description": "客户端信息",
+									"type": "text"
+								},
+								{
+									"key": "client_type",
+									"value": "1",
+									"description": "客户端类型: 0未知, 1-WEB, 2-WEP, 3-APP",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "0.1212313",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "0.1231312",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户-更新-登录-开放",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "scope_id",
+									"value": "user_auth",
+									"description": "授权范围",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "h5_client",
+									"description": "授权客户端",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18588891945",
+									"type": "text"
+								},
+								{
+									"key": "pass_word",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "client_driver",
+									"value": "fire_fox",
+									"type": "text"
+								},
+								{
+									"key": "client_type",
+									"value": "1",
+									"description": "客户端类型: 0未知, 1-WEB, 2-WEP, 3-APP",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "0.1212313",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "0.1231312",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户-获取-自己的详情",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "{}",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/me?_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							],
+							"query": [
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户-更新-自己的详情",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nick_name",
+									"value": "nick_name",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-获取-用户列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json",
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman."
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/user/adm-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"adm-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-获取-用户详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json",
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman."
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/adm/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"adm",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-更新-用户详情",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json",
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman."
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nick_name",
+									"value": "nick_name",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/adm/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"adm",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "系统-删除-用户信息",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{system_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "{}",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/user/sys/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"sys",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "管理-更新-登录-开放-普通管理版",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json",
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman."
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "scope_id",
+									"value": "admin_auth",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "admin_client",
+									"type": "text"
+								},
+								{
+									"key": "nick_name",
+									"value": "nick_name",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18500010002",
+									"type": "text"
+								},
+								{
+									"key": "pass_word",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "client_driver",
+									"value": "fire_fox",
+									"type": "text"
+								},
+								{
+									"key": "client_type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "0.1212313",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "0.1231312",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-更新-登录-开放-系统管理版",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json",
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman."
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "scope_id",
+									"value": "system_auth",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "system_client",
+									"type": "text"
+								},
+								{
+									"key": "nick_name",
+									"value": "nick_name",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18500010002",
+									"type": "text"
+								},
+								{
+									"key": "pass_word",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "client_driver",
+									"value": "fire_fox",
+									"type": "text"
+								},
+								{
+									"key": "client_type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "0.1212313",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "0.1231312",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-更新-自己的详情",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "超级管理员",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-获取-自己的信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "{}",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/me?_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"me"
+							],
+							"query": [
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "管理-新增-注册",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json",
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman."
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{admin_token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nick_name",
+									"value": "nick_name",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18588891945",
+									"type": "text"
+								},
+								{
+									"key": "pass_word",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "client_driver",
+									"value": "fire_fox",
+									"description": "客户端信息",
+									"type": "text"
+								},
+								{
+									"key": "client_type",
+									"value": "1",
+									"description": "客户端类型: 0未知, 1-WEB, 2-WEP, 3-APP",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "0.1212313",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "0.1231312",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "系统-获取-管理员列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{system_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "{}",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/sys-list?_time=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"sys-list"
+							],
+							"query": [
+								{
+									"key": "_time",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "系统-获取-管理员详情",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{system_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "{}",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/sys/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"sys",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "系统-新增-管理员",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{system_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "普通管理员",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18588891945",
+									"type": "text"
+								},
+								{
+									"key": "pass_word",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/sys",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"sys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "系统-更新-管理员详情",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/vnd.app.v1.0.0+json"
+							},
+							{
+								"key": "Token",
+								"type": "text",
+								"value": "{{system_token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "普通管理员",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/sys/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"sys",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "系统-删除-管理员信息",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.app.v1.0.0+json",
+								"type": "text"
+							},
+							{
+								"key": "Token",
+								"value": "{{system_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "{}",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/sys/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"sys",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"//return;",
+					"//前置请求",
+					"var base_url = pm.environment.get(\"base_url\");",
+					"",
+					"const userRequest = {",
+					"  url: base_url+'/user/login',",
+					"  method: 'PUT',",
+					"  header: ['Content-Type: application/json',",
+					"",
+					"  ],",
+					"  body: {",
+					"    mode: 'application/x-www-form-urlencoded',",
+					"    raw: JSON.stringify({",
+					"        'scope_id':'user_auth',",
+					"        'client_id':'h5_client',",
+					"        'mobile':\"18588891945\",",
+					"        'pass_word':'123456',",
+					"        'client_driver':'fire-fox',",
+					"        'client_type':'1',",
+					"        'lat':'0.1212313',",
+					"        'lng':'0.1212313'",
+					"    })",
+					"  }",
+					"};",
+					"pm.sendRequest(userRequest, function (err, res) {",
+					"    console.log(res);",
+					"    var result = res.json();",
+					"    var token = result.data.auth.token;",
+					"    pm.environment.set(\"user_token\", token);",
+					"",
+					"});",
+					"",
+					"",
+					"const adminRequest = {",
+					"  url: base_url+'/admin/login',",
+					"  method: 'PUT',",
+					"  header: ['Content-Type: application/json',",
+					"",
+					"  ],",
+					"  body: {",
+					"    mode: 'application/x-www-form-urlencoded',",
+					"    raw: JSON.stringify({",
+					"        'scope_id':'admin_auth',",
+					"        'client_id':'admin_client',",
+					"        'mobile':\"18500010002\",",
+					"        'pass_word':'123456',",
+					"        'client_driver':'fire-fox',",
+					"        'client_type':'1',",
+					"        'lat':'0.1212313',",
+					"        'lng':'0.1212313'",
+					"    })",
+					"  }",
+					"};",
+					"pm.sendRequest(adminRequest, function (err, res) {",
+					"    console.log(res);",
+					"    var result = res.json();",
+					"    var token = result.data.auth.token;",
+					"    pm.environment.set(\"admin_token\", token);",
+					"",
+					"});",
+					"",
+					"",
+					"const systemRequest = {",
+					"  url: base_url+'/admin/login',",
+					"  method: 'PUT',",
+					"  header: ['Content-Type: application/json',",
+					"",
+					"  ],",
+					"  body: {",
+					"    mode: 'application/x-www-form-urlencoded',",
+					"    raw: JSON.stringify({",
+					"        'scope_id':'system_auth',",
+					"        'client_id':'system_client',",
+					"        'mobile':\"18500010002\",",
+					"        'pass_word':'123456',",
+					"        'client_driver':'fire-fox',",
+					"        'client_type':'1',",
+					"        'lat':'0.1212313',",
+					"        'lng':'0.1212313'",
+					"    })",
+					"  }",
+					"};",
+					"pm.sendRequest(systemRequest, function (err, res) {",
+					"    console.log(res);",
+					"    var result = res.json();",
+					"    var token = result.data.auth.token;",
+					"    pm.environment.set(\"system_token\", token);",
+					"",
+					"});",
+					"//#"
+				]
+			}
+		}
+	]
+}
