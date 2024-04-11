@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/vendor
+*.log
+.env
+.phpunit.result.cache
+
+.htaccess
+nginx.htaccess
+markdwon
