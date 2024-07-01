@@ -1,5 +1,15 @@
-### 项目架构
+
+# ThinkPHP-6.0-领域设计版本
+
+___
+## 项目信息
+
+### 原始项目路径: https://dencit.coding.net/public/php-framework/tp6-ddd/git/files
+### 作者: Dencit - 陈鸿扬
+### 邮箱: 632112883@qq.com
+
 ---
+### 项目架构
 
 ~~~
 domain 根目录
@@ -66,8 +76,8 @@ demo 模块目录内 代码调用顺序
 
 ~~~
 
-### 项目目录
 ---
+### 项目目录
 
 > 数据迁移工具说明
 ~~~
